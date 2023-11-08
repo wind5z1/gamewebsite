@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel ="stylesheet " type= "text/css" href="style.css">
 
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: fantasy;}
@@ -17,6 +18,7 @@ body, html {
   color: #191970;
   line-height: 1.8;
   background-color: #ffdead;
+  cursor: none;
 }
 
 
@@ -67,7 +69,7 @@ body, html {
 }
 
 .w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
+.w3-hover-opacity {cursor: none;}
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
@@ -80,15 +82,17 @@ body, html {
 </head>
 <body>
   <div id="cursor"> </div>
+    
   <script>
    let cursor = document.querySelector('#cursor');
    let body = document.querySelector('body');
+   const expandFactor = 2;
    document.addEventListener('mousemove',(e) => {
      body.style.backgroundPositionX = e.pageX/-4 + 'px';
      body.style.backgroundPositionY = e.pageY/-4 + 'px';
      cursor.style.top = e.pageY + 'px';
      cursor.style.left = e.pageX + 'px';
-   })
+   });
   </script>
   
 
