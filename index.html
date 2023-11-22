@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel ="stylesheet " type= "text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="/Users/a403/Downloads/style (1).css">
 
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: fantasy;}
@@ -18,7 +18,7 @@ body, html {
   color: #191970;
   line-height: 1.8;
   background-color: #ffdead;
-  cursor: none;
+  cursor: default;
 }
 
 
@@ -26,6 +26,11 @@ body, html {
   position: relative;
   min-height: 100vh;
   overflow: auto;
+}
+
+.custom-cursor{
+  background: radial-gradient(circle,rgba(255,255,255,0.8),rgba(255,255,255,0.0));
+  border-radius: 50%;
 }
 
 
@@ -81,19 +86,6 @@ body, html {
 </style>
 </head>
 <body>
-  <div id="cursor"> </div>
-    
-  <script>
-   let cursor = document.querySelector('#cursor');
-   let body = document.querySelector('body');
-   const expandFactor = 2;
-   document.addEventListener('mousemove',(e) => {
-     body.style.backgroundPositionX = e.pageX/-4 + 'px';
-     body.style.backgroundPositionY = e.pageY/-4 + 'px';
-     cursor.style.top = e.pageY + 'px';
-     cursor.style.left = e.pageX + 'px';
-   });
-  </script>
   
 
 <!-- Navbar (sit on top) -->
@@ -181,11 +173,15 @@ body, html {
 </div>
 </div>
 
-
-<div class="w3-quarter w3-section">
+<div class="w3-quarter w3-section">   
     <span class="w3-xlarge">2.Maze</span><br>
-             Projects In Progress(まだ制作中)
-             <img src = "/Users/a403/Desktop/DodgeTheArrow.PNG"alt="Gameplay Scene."/>
+             Projects Done(既にできた作品)
+             <img src = "/Users/a403/Desktop/Maze.png"alt="Gameplay Scene."/>
+            <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+<div class="w3-row-padding w3-center">
+  <div class="w3-center">
+    <a href="https://windz.itch.io/maze", onclick="onClick(this)" style="white-space: nowrap; display: inline-block;line-height: 3; align-items: center;">Click Here To Download The Game(ここでタップしてダウンロードしよう！)</a>
+  </div>
     </div>
 </div>
 
@@ -199,20 +195,22 @@ body, html {
   </div>
 </div>
 
-<!-- Third Parallax Image with Portfolio Text -->
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact"></div>
+  <!-- Third Parallax Image with Portfolio Text -->
 <div class="bgimg-3 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-orangered w3-wide" style="color: #ff4500;">CONTACT</span>
   </div>
 </div>
-
-<!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center" style="font-size: 40px;">How Can I Help You?(連絡先)</h3>
+  <h3 id="contact"class ="w3-center" style="font-size: 40px;">How Can I Help You?(連絡先)</h3>
   <p class="w3-center" style="font-size: 25px;"><em>I'd love your feedback!(メッセージ待ってます！)</em></p>
 
+    
   <div class="w3-row w3-padding-32 w3-section">
     <div class="w3-col m4 w3-container">
+      
     
     </div>
     <div class="w3-col m8 w3-panel">
@@ -237,8 +235,13 @@ body, html {
         </button>
       </form>
     </div>
+    <div id="cursor"></div>
+<div id="cursor-glow"></div>
   </div>
 </div>
+
+
+
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
@@ -251,9 +254,9 @@ body, html {
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
-  
+
 </footer>
- 
+
 <script>
 // Modal Image Gallery
 function onClick(element) {
@@ -261,6 +264,17 @@ function onClick(element) {
 
  window.location.href = targetUrl;
 }
+
+document.addEventListener('mousemove', function(e) {
+ var x = e.clientX;
+ var y = e.clientY;
+ document.getElementById('cursor').style.left = x + 'px';
+ document.getElementById('cursor').style.top = y + 'px';
+ document.getElementById('cursor-glow').style.left = x + 'px';
+ document.getElementById('cursor-glow').style.top = y + 'px';
+});
+
+
 
 // Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
@@ -285,4 +299,5 @@ function toggleFunction() {
 </script>
 
 </body>
+
 </html>
